@@ -4,13 +4,15 @@ import (
 	"fmt"
 	"flag"
 	"os"
-	"github.com/samsaksham/golang_projects/cyoa/"
+	"github.com/samsaksham/golang_projects/cyoa/story"
+	"encoding/json"
+	
 	
 	
 )
 
 func main() {
-	filename := flag.String("file","gophers.json","The Adenture Book Json File")
+	filename := flag.String("file","gopher.json","The Adenture Book Json File")
 	flag.Parse()
 	fmt.Println(*filename)
 
@@ -19,9 +21,9 @@ func main() {
 		panic(err)
 	}
 
-	d := json.Decoder(f)
+	d := json.NewDecoder(f)
 	var story cyoa.Story
-	if err := d.decode(&story); err != nil{
+	if err := d.Decode(&story); err != nil{
 		panic(err)
 	}
 
