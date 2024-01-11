@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"flag"
 	"os"
-	"D:\Projects\Go-Learning\golang_mini_projects\adventure\"
+	"github.com/samsaksham/golang_projects/cyoa/"
 	
 	
 )
@@ -20,7 +20,7 @@ func main() {
 	}
 
 	d := json.Decoder(f)
-	var story adventure.Story
+	var story cyoa.Story
 	if err := d.decode(&story); err != nil{
 		panic(err)
 	}

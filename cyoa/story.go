@@ -1,4 +1,4 @@
-package  Adventure
+package  cyoa
 
 type Story map[string]Chapter
 
